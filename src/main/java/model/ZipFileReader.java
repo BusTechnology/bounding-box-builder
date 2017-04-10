@@ -13,8 +13,6 @@ import java.util.zip.ZipEntry;
 import java.util.zip.ZipException;
 import java.util.zip.ZipFile;
 
-import model.ShapeModel;
-
 public class ZipFileReader {
 
 	public static List<String> getFileName(String path) {
@@ -52,7 +50,7 @@ public class ZipFileReader {
 				InputStream is = zip.getInputStream(ze);
 
 				CsvParser.mapTo(ShapeModel.class)
-				.forEach(new InputStreamReader(is)
+					.forEach(new InputStreamReader(is)
 						, r -> {
 							Double latitude = r.getShape_pt_lat();   
 							Double longitude = r.getShape_pt_lon();
@@ -68,7 +66,7 @@ public class ZipFileReader {
 							if(seLat < Application.southwestLatitude) Application.southwestLatitude = seLat;
 							if(seLon < Application.southwestLongitude) Application.southwestLongitude = seLon;
 						});
-			}  
+			}
 		}  
 		zip.close();    
 	} 

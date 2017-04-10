@@ -5,17 +5,15 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import model.ZipFileReader;
-
 public class Application {
-	public static Double northeastLatitude = Double.parseDouble(String.valueOf(Integer.MIN_VALUE));
-	public static Double northeastLongitude = Double.parseDouble(String.valueOf(Integer.MIN_VALUE));
-	public static Double southwestLatitude = Double.MAX_VALUE;
-	public static Double southwestLongitude = Double.MAX_VALUE;
+	static Double northeastLatitude = Double.parseDouble(String.valueOf(Integer.MIN_VALUE));
+	static Double northeastLongitude = Double.parseDouble(String.valueOf(Integer.MIN_VALUE));
+	static Double southwestLatitude = Double.MAX_VALUE;
+	static Double southwestLongitude = Double.MAX_VALUE;
 
 	public static void main(String[] args) throws IOException {
 
-		List<String> fileNames = new ArrayList<String>();
+		List<String> fileNames;
 
 		if (args.length != 1){
 			System.out.println("Usage: boundingboxbuilder.jar [path of gtfs]");
@@ -26,15 +24,14 @@ public class Application {
 		
 		fileNames = ZipFileReader.getFileName(path);
 		if (fileNames.size() == 0){
-			System.err.println("No files found in path " + path.toString());
+			System.err.println("No files found in path " + path);
 			System.exit(-1);
 		}
-
-		ZipFileReader zipFileReader = new ZipFileReader();
 
 		for(int i=0; i<fileNames.size(); i++){
 			if(fileNames.get(i).endsWith(".zip")){
 				File file = new File(path+fileNames.get(i));
+				System.out.println("Reading file " + file.getCanonicalFile());
 				ZipFileReader.getZipFileContent(file, "shapes.txt");
 			}
 		}

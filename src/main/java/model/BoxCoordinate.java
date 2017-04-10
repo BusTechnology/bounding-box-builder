@@ -2,28 +2,13 @@ package model;
 
 public class BoxCoordinate {
 
-	private Double latitude = null;
-	private Double longitude = null;
+	private Double latitude;
+	private Double longitude;
 	private Double northeastLatitude = null;
 	private Double northeastLongitude = null;
 	private Double southwestLatitude = null;
 	private Double southwestLongitude = null;
 
-	public Double getLatitude() {
-		return latitude;
-	}
-
-	public void setLatitude(Double latitude) {
-		this.latitude = latitude;
-	}
-
-	public Double getLongitude() {
-		return longitude;
-	}
-
-	public void setLongitude(Double longitude) {
-		this.longitude = longitude;
-	}
 
 	public Double getNortheastLatitude() {
 		return northeastLatitude;
