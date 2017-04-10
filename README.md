@@ -7,4 +7,5 @@
 ## Run quickly:
 
   mvn package
+  
   java -jar target/boundingboxbuilder-0.0.1-SNAPSHOT.jar [path of gtfs *.zip files]
