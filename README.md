@@ -2,7 +2,7 @@
 
   a. generates bounding box for gtfs *.zip files
     
-  c. returns the bounding box northeast latitute, northeast longitude, southwest latitute, and southwest longitude
+  b. returns the bounding box northeast latitute, northeast longitude, southwest latitute, and southwest longitude
   
 ## Run quickly:
 
