@@ -1,8 +1,8 @@
 # bounding-box-builder
 
-  a. generates bounding box for GTFS .zip files
+  Quickly generate bounding box for a directory of GTFS .zip files.`
    
-## Run quickly:
+## Run :
   
   ```
   java -jar boundingboxbuilder-0.0.1-SNAPSHOT.jar ./
