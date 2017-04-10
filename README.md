@@ -1,11 +1,15 @@
-# bounding-box-build
+# bounding-box-builder
 
-  a. generates bounding box for gtfs *.zip files
-    
-  b. returns the bounding box northeast latitute, northeast longitude, southwest latitute, and southwest longitude
-  
+  a. generates bounding box for GTFS .zip files
+   
 ## Run quickly:
-
-  mvn package
   
-  java -jar target/boundingboxbuilder-0.0.1-SNAPSHOT.jar [path of gtfs *.zip files]
+  ```
+  java -jar boundingboxbuilder-0.0.1-SNAPSHOT.jar ./
+   
+  
+   northeastLatitude : 40.94270334583691   
+   northeastLongitude : -73.68955810626409
+   southwestLatitude : 40.49389432996309
+   southwestLongitude : -74.26415496902385
+   ```
